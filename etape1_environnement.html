@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Étape 1 : Mise en place de l'environnement</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <h1>Étape 1 : Mise en place de l'environnement</h1>
+</header>
+
+<!-- Layout avec sidebars -->
+<div class="page-layout">
+
+  <!-- Sidebar gauche : étapes -->
+  <aside class="sidebar left">
+    <h3>Étapes</h3>
+    <nav>
+      <a href="etape1_environnement.html">Étape 1 : Environnement</a>
+      <a href="etape2_installation.html">Étape 2 : Modules</a>
+      <a href="etape3_architecture.html">Étape 3 : Architecture</a>
+      <a href="etape4_serveur.html">Étape 4 : Serveur</a>
+      <a href="etape5_tests.html">Étape 5 : Tests</a>
+      <a href="etape6_react_setup.html">Étape 6 : React Setup</a>
+      <a href="etape7_components.html">Étape 7 : Composants React</a>
+      <a href="etape8_fetch_api.html">Étape 8 : Consommation API</a>
+      <a href="etape9_grid_pagination.html">Étape 9 : Grid & Pagination</a>
+      <a href="etape10_finalisation.html">Étape 10 : Finalisation</a>
+    </nav>
+  </aside>
+
+  <!-- Contenu central -->
+  <main class="content">
+    <section>
+      <h2>Objectif</h2>
+      <p>Installer Node.js, npm, et préparer le dossier de projet pour démarrer le développement.</p>
+    </section>
+
+    <section>
+      <h2>Explications</h2>
+      <p>Avant de coder, il faut un environnement stable. Node.js et npm permettent de gérer les modules nécessaires.</p>
+    </section>
+
+    <section>
+      <h2>Exemple de code</h2>
+      <pre><code>
+# Créer le dossier projet
+mkdir projet-tmdb
+cd projet-tmdb
+
+# Initialiser npm
+npm init -y
+</code></pre>
+    </section>
+
+    <section>
+      <h2>Bonnes pratiques</h2>
+      <ul>
+        <li>Utiliser toujours la dernière version stable de Node.js</li>
+        <li>Initialiser le projet avec npm pour gérer les dépendances</li>
+        <li>Créer un fichier README.md dès le début</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Notes et conseils</h2>
+      <p>Vérifier que Node.js et npm sont installés correctement :</p>
+      <pre><code>node -v
+npm -v</code></pre>
+    </section>
+
+    <section>
+      <h2>Résumé</h2>
+      <p>Vous avez créé votre dossier projet et initialisé npm. L'environnement est prêt pour installer les modules et démarrer le backend.</p>
+    </section>
+
+    <button onclick="window.location.href='solution_etape1_environnement.html'">
+      Voir la solution
+    </button>
+    <p><a href="index.html">Retour à l'index</a></p>
+  </main>
+
+  <!-- Sidebar droite : solutions -->
+  <aside class="sidebar right">
+    <h3>Solutions</h3>
+    <nav>
+      <a href="solution_etape1_environnement.html">Solution 1</a>
+      <a href="solution_etape2_installation.html">Solution 2</a>
+      <a href="solution_etape3_architecture.html">Solution 3</a>
+      <a href="solution_etape4_serveur.html">Solution 4</a>
+      <a href="solution_etape5_tests.html">Solution 5</a>
+      <a href="solution_etape6_react_setup.html">Solution 6</a>
+      <a href="solution_etape7_components.html">Solution 7</a>
+      <a href="solution_etape8_fetch_api.html">Solution 8</a>
+      <a href="solution_etape9_grid_pagination.html">Solution 9</a>
+      <a href="solution_etape10_finalisation.html">Solution 10</a>
+    </nav>
+  </aside>
+
+</div>
+
+<footer>&copy; 2025 Projet API TMDB & React</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solution : Étape 9 - Grid & Pagination</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+ 
+.card { background:#fff; border-radius:12px; padding:1.5rem; margin:2rem auto; max-width:900px; box-shadow:0 6px 22px rgba(0,0,0,0.08);}
+.card:hover { transform: translateY(-4px); box-shadow:0 12px 28px rgba(0,0,0,0.12);}
+h2 { color:#4f46e5; margin-bottom:1rem;}
+pre { background:#f3f4f6; border-left:5px solid #6366f1; padding:1rem; border-radius:6px; overflow-x:auto;}
+</style>
+</head>
+<body>
+<header>
+<h1>Solution : Étape 9 - Grid & Pagination</h1>
+<div class="nav-container">
+    <!-- Étapes côté gauche -->
+ 
+
+    <!-- Solutions côté droit -->
+    <nav class="nav-column">
+      <h3>Solutions</h3>
+      <a href="solution_etape1_environnement.html">Solution 1</a>
+      <a href="solution_etape2_installation.html">Solution 2</a>
+      <a href="solution_etape3_architecture.html">Solution 3</a>
+      <a href="solution_etape4_serveur.html">Solution 4</a>
+      <a href="solution_etape5_tests.html">Solution 5</a>
+      <a href="solution_etape6_react_setup.html">Solution 6</a>
+      <a href="solution_etape7_components.html">Solution 7</a>
+      <a href="solution_etape8_fetch_api.html">Solution 8</a>
+      <a href="solution_etape9_grid_pagination.html">Solution 9</a>
+      <a href="solution_etape10_finalisation.html">Solution 10</a>
+    </nav>
+  </div>
+  <button class="btn"><a href="index.html">Retour à l'index</a></button>
+</header>
+
+<main>
+<div class="card">
+<h2>1️ Mise en place de la grille</h2>
+<pre>
+&lt;div className="grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}&gt;
+  {movies.map(movie =&gt; &lt;MovieCard key={movie.id} movie={movie} /&gt;)}
+&lt;/div&gt;
+</pre>
+<p>CSS Grid avec <code>auto-fit</code> rend la grille responsive automatiquement.</p>
+</div>
+
+<div class="card">
+<h2>2️ Pagination</h2>
+<pre>
+&lt;Pagination
+  currentPage={currentPage}
+  totalPages={totalPages}
+  onPageChange={handlePageChange}
+/&gt;
+</pre>
+<p>Permet de naviguer entre les pages et de limiter le nombre de films affichés.</p>
+</div>
+
+<div class="card">
+<h2>3️ Explications pédagogiques</h2>
+<p>Métaphore : la grille = étagères modulables, les cartes = produits, la pagination = ascenseur pour passer d’une étagère à l’autre. Chaque composant est réutilisable et indépendant.</p>
+</div>
+
+<div class="card">
+<h2>4️ Vérification</h2>
+<p>Tester sur mobile et desktop pour s’assurer que la grille reste responsive et que la pagination fonctionne correctement.</p>
+</div>
+
+<div class="card">
+<h2>5️ Prochaines étapes</h2>
+<p>Passer à l’étape 10 pour finaliser le projet, tester toutes les fonctionnalités et déployer.</p>
+        <button class="btn"><a href="index.html">Retour à l'index</a></button>
+</div>
+</main>
+</body>
+</html>

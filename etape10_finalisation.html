@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solution : Étape 10 - Finalisation</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.card {
+  background:#fff;
+  border-radius:12px;
+  padding:1.5rem;
+  margin:2rem auto;
+  max-width:800px;
+  box-shadow:0 6px 22px rgba(0,0,0,0.08);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow:0 12px 28px rgba(0,0,0,0.12);
+}
+h2 { color:#4f46e5; margin-bottom:1rem; }
+pre {
+  background:#f3f4f6;
+  border-left:5px solid #6366f1;
+  padding:1rem;
+  border-radius:6px;
+  overflow-x:auto;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Solution : Étape 10 - Finalisation & Test</h1>
+</header>
+
+<div class="page-layout">
+
+  <!-- Sidebar gauche -->
+  <aside class="sidebar left">
+    <h3>Étapes</h3>
+    <nav>
+      <a href="etape1_environnement.html">Étape 1 : Environnement</a>
+      <a href="etape2_installation.html">Étape 2 : Modules</a>
+      <a href="etape3_architecture.html">Étape 3 : Architecture</a>
+      <a href="etape4_serveur.html">Étape 4 : Serveur</a>
+      <a href="etape5_tests.html">Étape 5 : Tests</a>
+      <a href="etape6_react_setup.html">Étape 6 : React Setup</a>
+      <a href="etape7_components.html">Étape 7 : Composants React</a>
+      <a href="etape8_fetch_api.html">Étape 8 : Consommation API</a>
+      <a href="etape9_grid_pagination.html">Étape 9 : Grid & Pagination</a>
+      <a href="etape10_finalisation.html">Étape 10 : Finalisation</a>
+    </nav>
+  </aside>
+
+  <!-- Contenu principal -->
+  <main class="content">
+    <div class="card">
+      <h2>1️ Vérification complète</h2>
+      <p>Tester chaque composant React : <strong>MovieCard</strong>, <strong>MovieGrid</strong>, <strong>Pagination</strong>.</p>
+      <p>Vérifier la récupération des films via <code>Axios</code> et l’API Node.js.</p>
+    </div>
+
+    <div class="card">
+      <h2>2️ Ajustements CSS</h2>
+      <p>Vérifier les styles sur <em>mobile, tablette et desktop</em>. Ajouter des transitions pour rendre l’expérience plus fluide.</p>
+    </div>
+
+    <div class="card">
+      <h2>3️ Déploiement</h2>
+<pre>
+npm run build
+# Copier le dossier build ou dist vers votre serveur
+# Vérifier que le backend Node.js est accessible
+</pre>
+    </div>
+
+    <div class="card">
+      <h2>4️ Explications pédagogiques</h2>
+      <p>Cette étape illustre l’importance de <strong>tester avant de livrer</strong>.  
+      Métaphore : comme une voiture, chaque pièce (moteur, roues, phares) fonctionne seule, mais c’est seulement ensemble que la voiture roule.  
+      Ici, nos composants React + backend Node.js = l’application complète.</p>
+    </div>
+
+    <div class="card">
+      <h2>5️ Conclusion</h2>
+      <p>🎉 Projet terminé :  
+        - Backend Node.js avec API TMDB  
+        - Frontend React moderne  
+        - Composants réutilisables  
+        - Grille responsive + Pagination  
+      </p>
+      <p><a href="index.html">⬅ Retour à l'index</a></p>
+    </div>
+  </main>
+
+  <!-- Sidebar droite -->
+  <aside class="sidebar right">
+    <h3>Solutions</h3>
+    <nav>
+      <a href="solution_etape1_environnement.html">Solution 1</a>
+      <a href="solution_etape2_installation.html">Solution 2</a>
+      <a href="solution_etape3_architecture.html">Solution 3</a>
+      <a href="solution_etape4_serveur.html">Solution 4</a>
+      <a href="solution_etape5_tests.html">Solution 5</a>
+      <a href="solution_etape6_react_setup.html">Solution 6</a>
+      <a href="solution_etape7_components.html">Solution 7</a>
+      <a href="solution_etape8_fetch_api.html">Solution 8</a>
+      <a href="solution_etape9_grid_pagination.html">Solution 9</a>
+      <a href="solution_etape10_finalisation.html">Solution 10</a>
+    </nav>
+  </aside>
+
+</div>
+
+<footer>
+  &copy; 2025 Projet API TMDB & React
+</footer>
+
+</body>
+</html>

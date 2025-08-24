@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Étape 8 : Consommation API</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.card {
+  background:#fff;
+  border-radius:12px;
+  padding:1.5rem;
+  margin:2rem auto;
+  max-width:800px;
+  box-shadow:0 6px 22px rgba(0,0,0,0.08);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow:0 12px 28px rgba(0,0,0,0.12);
+}
+h2 { color:#4f46e5; margin-bottom:1rem; }
+pre {
+  background:#f3f4f6;
+  border-left:5px solid #6366f1;
+  padding:1rem;
+  border-radius:6px;
+  overflow-x:auto;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Étape 8 : Consommation API</h1>
+</header>
+
+<div class="page-layout">
+
+  <!-- Sidebar gauche -->
+  <aside class="sidebar left">
+    <h3>Étapes</h3>
+    <nav>
+      <a href="etape1_environnement.html">Étape 1 : Environnement</a>
+      <a href="etape2_installation.html">Étape 2 : Modules</a>
+      <a href="etape3_architecture.html">Étape 3 : Architecture</a>
+      <a href="etape4_serveur.html">Étape 4 : Serveur</a>
+      <a href="etape5_tests.html">Étape 5 : Tests</a>
+      <a href="etape6_react_setup.html">Étape 6 : React Setup</a>
+      <a href="etape7_components.html">Étape 7 : Composants React</a>
+      <a href="etape8_fetch_api.html">Étape 8 : Consommation API</a>
+      <a href="etape9_grid_pagination.html">Étape 9 : Grid & Pagination</a>
+      <a href="etape10_finalisation.html">Étape 10 : Finalisation</a>
+    </nav>
+  </aside>
+
+  <!-- Contenu principal -->
+  <main class="content">
+    <div class="card">
+      <h2>Objectif</h2>
+      <p>Récupérer les données de films depuis l’API Node.js / TMDB et les afficher dans React.</p>
+    </div>
+
+    <div class="card">
+      <h2>Instructions</h2>
+      <ol>
+        <li>Installer Axios si ce n’est pas déjà fait : <code>npm install axios</code></li>
+        <li>Créer un service API : <code>src/services/api.js</code> pour centraliser les appels</li>
+        <li>Dans <code>App.jsx</code>, utiliser <code>useEffect</code> pour appeler l’API et stocker les films dans un état</li>
+        <li>Passer les données aux composants <code>MovieGrid</code> et <code>MovieCard</code></li>
+        <li>Tester que les films s’affichent correctement</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Explications pédagogiques</h2>
+      <p>Axios permet de récupérer facilement les données JSON depuis votre API Node.js. On stocke les films dans un <code>useState</code> et on met à jour l’affichage automatiquement.</p>
+      <p>Métaphore : le service API est comme un serveur de livraison qui amène les films directement dans votre rayon (la grille).</p>
+    </div>
+
+    <div class="card">
+      <h2>Action concrète</h2>
+      <pre>
+import axios from 'axios';
+
+export const fetchMovies = async () =&gt; {
+  try {
+    const res = await axios.get('http://localhost:3000/movies');
+    return res.data;
+  } catch (err) {
+    console.error('Erreur API:', err);
+    return [];
+  }
+};
+      </pre>
+
+      <p>Puis dans App.jsx :</p>
+      <pre>
+import { useState, useEffect } from 'react';
+import { fetchMovies } from './services/api';
+import MovieGrid from './components/MovieGrid';
+
+function App() {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() =&gt; {
+    fetchMovies().then(data =&gt; setMovies(data));
+  }, []);
+
+  return &lt;MovieGrid movies={movies} /&gt;;
+}
+
+export default App;
+      </pre>
+    </div>
+
+    <div class="card">
+      <h2>Prochaines étapes</h2>
+      <p>Une fois l’affichage fonctionnel, vous pourrez passer à l’étape 9 pour créer la grille responsive avec pagination.</p>
+      <p><a href="index.html">Retour à l'index</a></p>
+    </div>
+  </main>
+
+  <!-- Sidebar droite -->
+  <aside class="sidebar right">
+    <h3>Solutions</h3>
+    <nav>
+      <a href="solution_etape1_environnement.html">Solution 1</a>
+      <a href="solution_etape2_installation.html">Solution 2</a>
+      <a href="solution_etape3_architecture.html">Solution 3</a>
+      <a href="solution_etape4_serveur.html">Solution 4</a>
+      <a href="solution_etape5_tests.html">Solution 5</a>
+      <a href="solution_etape6_react_setup.html">Solution 6</a>
+      <a href="solution_etape7_components.html">Solution 7</a>
+      <a href="solution_etape8_fetch_api.html">Solution 8</a>
+      <a href="solution_etape9_grid_pagination.html">Solution 9</a>
+      <a href="solution_etape10_finalisation.html">Solution 10</a>
+    </nav>
+  </aside>
+
+</div>
+
+<footer>
+  &copy; 2025 Projet API TMDB & React
+</footer>
+
+</body>
+</html>

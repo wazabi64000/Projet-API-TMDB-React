@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Étape 5 : Premier tests</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Étape 5 : Premier tests</h1>
+</header>
+
+<div class="page-layout">
+
+  <!-- Sidebar gauche : étapes -->
+  <aside class="sidebar left">
+    <h3>Étapes</h3>
+    <nav>
+      <a href="etape1_environnement.html">Étape 1 : Environnement</a>
+      <a href="etape2_installation.html">Étape 2 : Modules</a>
+      <a href="etape3_architecture.html">Étape 3 : Architecture</a>
+      <a href="etape4_serveur.html">Étape 4 : Serveur</a>
+      <a href="etape5_tests.html">Étape 5 : Tests</a>
+      <a href="etape6_react_setup.html">Étape 6 : React Setup</a>
+      <a href="etape7_components.html">Étape 7 : Composants React</a>
+      <a href="etape8_fetch_api.html">Étape 8 : Consommation API</a>
+      <a href="etape9_grid_pagination.html">Étape 9 : Grid & Pagination</a>
+      <a href="etape10_finalisation.html">Étape 10 : Finalisation</a>
+    </nav>
+  </aside>
+
+  <!-- Contenu central -->
+  <main class="content">
+    <section>
+      <h2>Objectif</h2>
+      <p>Tester les endpoints du serveur pour vérifier que tout fonctionne correctement.</p>
+    </section>
+
+    <section>
+      <h2>Explications</h2>
+      <p>Utilisez Postman ou le navigateur pour tester les routes GET et vérifier les réponses.</p>
+    </section>
+
+    <section>
+      <h2>Exemple de code</h2>
+      <pre><code>
+# Tester l'endpoint principal
+GET http://localhost:3000/
+
+# Tester un endpoint de films
+GET http://localhost:3000/movies?title=Inception
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Bonnes pratiques</h2>
+      <ul>
+        <li>Tester tous les endpoints avant de connecter le frontend</li>
+        <li>Vérifier les codes HTTP et les messages d'erreur</li>
+        <li>Tester les limites avec rate limiter</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Notes et conseils</h2>
+      <p>Vous pouvez ajouter des logs dans les controllers pour mieux comprendre le flux des requêtes.</p>
+    </section>
+
+    <section>
+      <h2>Résumé</h2>
+      <p>Les tests confirment que le serveur fonctionne, les routes répondent correctement et le backend est prêt pour le frontend React.</p>
+    </section>
+
+    <button onclick="window.location.href='solution_etape5_tests.html'">Voir la solution</button>
+    <p><a href="index.html">Retour à l'index</a></p>
+  </main>
+
+  <!-- Sidebar droite : solutions -->
+  <aside class="sidebar right">
+    <h3>Solutions</h3>
+    <nav>
+      <a href="solution_etape1_environnement.html">Solution 1</a>
+      <a href="solution_etape2_installation.html">Solution 2</a>
+      <a href="solution_etape3_architecture.html">Solution 3</a>
+      <a href="solution_etape4_serveur.html">Solution 4</a>
+      <a href="solution_etape5_tests.html">Solution 5</a>
+      <a href="solution_etape6_react_setup.html">Solution 6</a>
+      <a href="solution_etape7_components.html">Solution 7</a>
+      <a href="solution_etape8_fetch_api.html">Solution 8</a>
+      <a href="solution_etape9_grid_pagination.html">Solution 9</a>
+      <a href="solution_etape10_finalisation.html">Solution 10</a>
+    </nav>
+  </aside>
+
+</div>
+
+<footer>
+&copy; 2025 Projet API TMDB & React
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

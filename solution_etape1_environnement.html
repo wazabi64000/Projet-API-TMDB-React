@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solution : Étape 1 - Mise en place de l'environnement</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+/* Styles améliorés pour les solutions */
+body { background: #f0f4f8; }
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.8rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.12);}
+h2 { color: #4f46e5; margin-bottom: 1rem;}
+.example {
+  background: #f3f4f6;
+  border-left: 5px solid #6366f1;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-family: monospace;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+.note {
+  background: #ffeeba;
+  border-left: 5px solid #ff9800;
+  padding: 0.8rem 1rem;
+  margin: 1rem 0;
+  border-radius: 6px;
+  font-style: italic;
+}
+button {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:hover { background: #3730a3; transform: translateY(-2px);}
+</style>
+</head>
+<body>
+    
+    <header>
+    <h1>Solution : Étape 1</h1>
+<div class="nav-container">
+    <!-- Étapes côté gauche -->
+ 
+
+    <!-- Solutions côté droit -->
+    <nav class="nav-column">
+      <h3>Solutions</h3>
+      <a href="solution_etape1_environnement.html">Solution 1</a>
+      <a href="solution_etape2_installation.html">Solution 2</a>
+      <a href="solution_etape3_architecture.html">Solution 3</a>
+      <a href="solution_etape4_serveur.html">Solution 4</a>
+      <a href="solution_etape5_tests.html">Solution 5</a>
+      <a href="solution_etape6_react_setup.html">Solution 6</a>
+      <a href="solution_etape7_components.html">Solution 7</a>
+      <a href="solution_etape8_fetch_api.html">Solution 8</a>
+      <a href="solution_etape9_grid_pagination.html">Solution 9</a>
+      <a href="solution_etape10_finalisation.html">Solution 10</a>
+    </nav>
+</div>
+<button class="btn"><a href="index.html">Retour à l'index</a></button>
+</header>
+
+<main>
+
+<div class="card">
+<h2>1️ Comprendre l’objectif</h2>
+<p>Avant de plonger dans le code, clarifions ce que nous faisons :</p>
+<ul>
+<li>Créer un dossier propre pour votre projet</li>
+<li>Initialiser npm pour gérer les modules</li>
+<li>Vérifier que Node.js fonctionne correctement</li>
+</ul>
+<p><em>Métaphore :</em> C’est comme préparer le chantier : on délimite le terrain, on installe les fondations, et on s’assure que les outils sont fonctionnels.</p>
+<p><strong>Action :</strong> Ouvrez votre terminal et préparez-vous à créer votre dossier projet.</p>
+</div>
+
+<div class="card">
+<h2>2️ Créer le dossier et initialiser npm</h2>
+<p>Tout commence par la création du projet et l’initialisation de npm :</p>
+<pre class="example"><code>
+# Créer le dossier projet
+mkdir projet-tmdb
+cd projet-tmdb
+
+# Initialiser npm
+npm init -y
+</code></pre>
+<p><strong>Pourquoi :</strong> npm crée le <code>package.json</code> qui servira à installer Express et toutes les dépendances futures.</p>
+<p><strong>Action :</strong> Tapez ces commandes maintenant et observez que le dossier et le fichier package.json sont créés.</p>
+</div>
+
+<div class="card">
+<h2>3️ Vérifier Node.js et npm</h2>
+<p>Avant d’aller plus loin, il est essentiel de s’assurer que Node.js et npm sont opérationnels :</p>
+<pre class="example"><code>
+node -v
+npm -v
+</code></pre>
+<p><strong>Pourquoi :</strong> Si ces versions ne s’affichent pas, votre serveur ne pourra pas exécuter de code Node.js. Métaphore : c’est comme vérifier si le moteur tourne avant de démarrer la voiture.</p>
+<p><strong>Action :</strong> Notez la version affichée, cela vous aidera si vous rencontrez des problèmes de compatibilité.</p>
+</div>
+
+<div class="card">
+<h2>4️ Cas concrets et erreurs fréquentes</h2>
+<p>Voici quelques erreurs que vous pourriez rencontrer :</p>
+<pre class="note"><code>
+# npm non installé
+$ npm init -y
+-bash: npm: command not found
+</code></pre>
+<p><strong>Solution :</strong> Installer Node.js depuis <a href="https://nodejs.org/">nodejs.org</a> ou via nvm.</p>
+
+<pre class="note"><code>
+# dossier existant
+$ mkdir projet-tmdb
+mkdir: cannot create directory ‘projet-tmdb’: File exists
+</code></pre>
+<p><strong>Solution :</strong> Supprimer l’ancien dossier ou choisir un nouveau nom. Action : faites-le immédiatement pour éviter toute confusion.</p>
+</div>
+
+<div class="card">
+<h2>5️ Bonnes pratiques et enchaînement</h2>
+<ul>
+<li>Créer un dossier dédié, pas sur le bureau</li>
+<li>Vérifier Node.js à jour et stable</li>
+<li>Documenter dès maintenant avec README.md</li>
+<li>Ne pas encombrer le projet avec des modules inutiles</li>
+</ul>
+<p><em>Métaphore :</em> Chaque décision ici est comme poser une pierre dans un mur : chaque pierre bien posée garantit la stabilité de tout le bâtiment.</p>
+<p><strong>Action :</strong> Créez votre README.md et notez les premières idées du projet.</p>
+</div>
+
+<div class="card">
+<h2>6️ Résumé et prochaines actions</h2>
+<p>Vous avez :</p>
+<ul>
+<li>Un dossier projet propre</li>
+<li>npm initialisé et fonctionnel</li>
+<li>Node.js vérifié</li>
+<li>Une base solide pour installer Express et commencer à coder</li>
+</ul>
+<p><strong>Action :</strong> Passez à l’étape suivante : installation des modules et création de votre serveur Express.</p>
+</div>
+
+        <button class="btn"><a href="index.html">Retour à l'index</a></button>
+</main>
+
+<footer>
+&copy; 2025 Projet API TMDB & React
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

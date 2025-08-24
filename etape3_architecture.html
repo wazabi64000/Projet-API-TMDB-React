@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Étape 3 : Mise en place de l'architecture</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Étape 3 : Mise en place de l'architecture</h1>
+</header>
+
+<div class="page-layout">
+
+  <!-- Sidebar gauche : étapes -->
+  <aside class="sidebar left">
+    <h3>Étapes</h3>
+    <nav>
+      <a href="etape1_environnement.html">Étape 1 : Environnement</a>
+      <a href="etape2_installation.html">Étape 2 : Modules</a>
+      <a href="etape3_architecture.html">Étape 3 : Architecture</a>
+      <a href="etape4_serveur.html">Étape 4 : Serveur</a>
+      <a href="etape5_tests.html">Étape 5 : Tests</a>
+      <a href="etape6_react_setup.html">Étape 6 : React Setup</a>
+      <a href="etape7_components.html">Étape 7 : Composants React</a>
+      <a href="etape8_fetch_api.html">Étape 8 : Consommation API</a>
+      <a href="etape9_grid_pagination.html">Étape 9 : Grid & Pagination</a>
+      <a href="etape10_finalisation.html">Étape 10 : Finalisation</a>
+    </nav>
+  </aside>
+
+  <!-- Contenu central -->
+  <main class="content">
+    <section>
+      <h2>Objectif</h2>
+      <p>Créer la structure MVC du projet : dossiers <code>services</code>, <code>controllers</code>, <code>routes</code>, et le fichier <code>.env</code> pour la configuration.</p>
+    </section>
+
+    <section>
+      <h2>Explications</h2>
+      <p>L’architecture MVC permet de séparer les responsabilités :</p>
+      <ul>
+        <li><strong>Routes</strong> : définissent les endpoints de l’API</li>
+        <li><strong>Controllers</strong> : traitent les requêtes et appellent les services</li>
+        <li><strong>Services</strong> : contiennent la logique métier et les appels à TMDB</li>
+        <li><strong>.env</strong> : stocke les clés API et variables sensibles</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Exemple de code</h2>
+      <pre><code>
+# Création des dossiers
+mkdir controllers routes services
+touch .env
+      </code></pre>
+      <pre><code>
+# Exemple fichier routes/movies.js
+import express from 'express';
+import { getMovies } from '../controllers/moviesController.js';
+const router = express.Router();
+router.get('/', getMovies);
+export default router;
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Bonnes pratiques</h2>
+      <ul>
+        <li>Nommer clairement les dossiers et fichiers</li>
+        <li>Utiliser des import/export ESM</li>
+        <li>Ne pas mettre les clés API en dur, utiliser <code>.env</code></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Notes et conseils</h2>
+      <p>Vérifier que chaque dossier contient un fichier <code>index.js</code> ou l’équivalent si nécessaire pour centraliser les exports.</p>
+    </section>
+
+    <section>
+      <h2>Résumé</h2>
+      <p>L’architecture MVC est en place, le projet est structuré et prêt pour la configuration du serveur.</p>
+    </section>
+
+    <button onclick="window.location.href='solution_etape3_architecture.html'">Voir la solution</button>
+    <p><a href="index.html">Retour à l'index</a></p>
+  </main>
+
+  <!-- Sidebar droite : solutions -->
+  <aside class="sidebar right">
+    <h3>Solutions</h3>
+    <nav>
+      <a href="solution_etape1_environnement.html">Solution 1</a>
+      <a href="solution_etape2_installation.html">Solution 2</a>
+      <a href="solution_etape3_architecture.html">Solution 3</a>
+      <a href="solution_etape4_serveur.html">Solution 4</a>
+      <a href="solution_etape5_tests.html">Solution 5</a>
+      <a href="solution_etape6_react_setup.html">Solution 6</a>
+      <a href="solution_etape7_components.html">Solution 7</a>
+      <a href="solution_etape8_fetch_api.html">Solution 8</a>
+      <a href="solution_etape9_grid_pagination.html">Solution 9</a>
+      <a href="solution_etape10_finalisation.html">Solution 10</a>
+    </nav>
+  </aside>
+
+</div>
+
+<footer>
+&copy; 2025 Projet API TMDB & React
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

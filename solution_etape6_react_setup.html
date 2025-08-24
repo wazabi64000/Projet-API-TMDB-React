@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solution : Étape 6 - React Setup</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+ 
+.card { background:#fff; border-radius:12px; padding:1.5rem; margin:2rem auto; max-width:900px; box-shadow:0 6px 22px rgba(0,0,0,0.08);}
+.card:hover { transform: translateY(-4px); box-shadow:0 12px 28px rgba(0,0,0,0.12);}
+h2 { color:#4f46e5; margin-bottom:1rem;}
+pre { background:#f3f4f6; border-left:5px solid #6366f1; padding:1rem; border-radius:6px; overflow-x:auto;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Solution : Étape 6 React Setup</h1>
+   <div class="nav-container">
+    <!-- Étapes côté gauche -->
+ 
+    <!-- Solutions côté droit -->
+    <nav class="nav-column">
+      <h3>Solutions</h3>
+      <a href="solution_etape1_environnement.html">Solution 1</a>
+      <a href="solution_etape2_installation.html">Solution 2</a>
+      <a href="solution_etape3_architecture.html">Solution 3</a>
+      <a href="solution_etape4_serveur.html">Solution 4</a>
+      <a href="solution_etape5_tests.html">Solution 5</a>
+      <a href="solution_etape6_react_setup.html">Solution 6</a>
+      <a href="solution_etape7_components.html">Solution 7</a>
+      <a href="solution_etape8_fetch_api.html">Solution 8</a>
+      <a href="solution_etape9_grid_pagination.html">Solution 9</a>
+      <a href="solution_etape10_finalisation.html">Solution 10</a>
+    </nav>
+  </div>
+  <button class="btn"><a href="index.html">Retour à l'index</a></button>
+</header>
+
+<main>
+<div class="card">
+<h2>1️⃣ Création du projet React</h2>
+<p>Exécutez :</p>
+<pre>
+npm create vite@latest frontend --template react
+cd frontend
+npm install
+npm run dev
+</pre>
+<p>Vous avez maintenant un projet React fonctionnel, prêt à connecter votre API Node.js.</p>
+</div>
+
+<div class="card">
+<h2>2️⃣ Structure du projet</h2>
+<ul>
+<li><code>src/App.jsx</code> : composant principal</li>
+<li><code>src/main.jsx</code> : point d’entrée React</li>
+<li><code>src/components/</code> : dossier pour vos composants réutilisables</li>
+<li><code>index.html</code> : page HTML racine</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>3️⃣ Explications pédagogiques</h2>
+<p>React permet de créer des composants modulaires et réutilisables. Chaque composant doit être simple et indépendant.</p>
+<p>Exemple : <code>MovieCard.jsx</code> pour afficher un film. Une métaphore : chaque carte = une fiche produit dans un magasin.</p>
+</div>
+
+<div class="card">
+<h2>4️⃣ Exemple concret</h2>
+<pre>
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Hello React&lt;/h1&gt;
+    &lt;/div&gt;
+  );
+}
+export default App;
+</pre>
+<p>Tester ce composant pour vous assurer que le projet fonctionne correctement.</p>
+</div>
+
+<div class="card">
+<h2>5️⃣ Prochaines étapes</h2>
+<p>Après cette étape, vous pourrez créer vos composants React, consommer l’API TMDB et construire la grille avec pagination.</p>
+        <button class="btn"><a href="index.html">Retour à l'index</a></button>
+</div>
+</main>
+
+</body>
+</html>

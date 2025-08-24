@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Étape 2 : Installation des modules</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <h1>Étape 2 : Installation des modules</h1>
+</header>
+
+<!-- Layout avec sidebars -->
+<div class="page-layout">
+
+  <!-- Sidebar gauche : étapes -->
+  <aside class="sidebar left">
+    <h3>Étapes</h3>
+    <nav>
+      <a href="etape1_environnement.html">Étape 1 : Environnement</a>
+      <a href="etape2_installation.html">Étape 2 : Modules</a>
+      <a href="etape3_architecture.html">Étape 3 : Architecture</a>
+      <a href="etape4_serveur.html">Étape 4 : Serveur</a>
+      <a href="etape5_tests.html">Étape 5 : Tests</a>
+      <a href="etape6_react_setup.html">Étape 6 : React Setup</a>
+      <a href="etape7_components.html">Étape 7 : Composants React</a>
+      <a href="etape8_fetch_api.html">Étape 8 : Consommation API</a>
+      <a href="etape9_grid_pagination.html">Étape 9 : Grid & Pagination</a>
+      <a href="etape10_finalisation.html">Étape 10 : Finalisation</a>
+    </nav>
+  </aside>
+
+  <!-- Contenu central -->
+  <main class="content">
+    <section>
+      <h2>Objectif</h2>
+      <p>Installer les modules nécessaires pour le backend : express, axios, helmet, cors, dotenv, express-rate-limit.</p>
+    </section>
+
+    <section>
+      <h2>Explications</h2>
+      <p>Chaque module a un rôle précis :</p>
+      <ul>
+        <li><strong>express</strong> : créer le serveur HTTP</li>
+        <li><strong>axios</strong> : faire des requêtes vers TMDB</li>
+        <li><strong>helmet</strong> : sécuriser les headers HTTP</li>
+        <li><strong>cors</strong> : gérer les accès cross-origin</li>
+        <li><strong>dotenv</strong> : gérer les variables d'environnement</li>
+        <li><strong>express-rate-limit</strong> : limiter le nombre de requêtes</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Exemple de code</h2>
+      <pre><code>npm install express axios helmet cors dotenv express-rate-limit</code></pre>
+    </section>
+
+    <section>
+      <h2>Bonnes pratiques</h2>
+      <ul>
+        <li>Ne pas installer de modules inutiles</li>
+        <li>Ajouter les modules dans package.json</li>
+        <li>Utiliser un fichier .env pour les clés API</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Notes et conseils</h2>
+      <p>Vérifier que le package.json contient bien toutes les dépendances et la version correspondante.</p>
+    </section>
+
+    <section>
+      <h2>Résumé</h2>
+      <p>Les modules sont installés, l'environnement backend est prêt pour créer l’architecture MVC.</p>
+    </section>
+
+    <button onclick="window.location.href='solution_etape2_installation.html'">
+      Voir la solution
+    </button>
+    <p><a href="index.html">Retour à l'index</a></p>
+  </main>
+
+  <!-- Sidebar droite : solutions -->
+  <aside class="sidebar right">
+    <h3>Solutions</h3>
+    <nav>
+      <a href="solution_etape1_environnement.html">Solution 1</a>
+      <a href="solution_etape2_installation.html">Solution 2</a>
+      <a href="solution_etape3_architecture.html">Solution 3</a>
+      <a href="solution_etape4_serveur.html">Solution 4</a>
+      <a href="solution_etape5_tests.html">Solution 5</a>
+      <a href="solution_etape6_react_setup.html">Solution 6</a>
+      <a href="solution_etape7_components.html">Solution 7</a>
+      <a href="solution_etape8_fetch_api.html">Solution 8</a>
+      <a href="solution_etape9_grid_pagination.html">Solution 9</a>
+      <a href="solution_etape10_finalisation.html">Solution 10</a>
+    </nav>
+  </aside>
+
+</div>
+
+<footer>
+  &copy; 2025 Projet API TMDB & React
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

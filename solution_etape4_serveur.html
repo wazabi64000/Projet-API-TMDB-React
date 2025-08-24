@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solution : Étape 4 - Démarrage serveur</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>/* même style que les cartes précédentes */</style>
+</head>
+<body>
+<header>
+    <h1>Solution : Étape 4</h1>
+<div class="nav-container">
+    <!-- Étapes côté gauche -->
+ 
+    <!-- Solutions côté droit -->
+    <nav class="nav-column">
+      <h3>Solutions</h3>
+      <a href="solution_etape1_environnement.html">Solution 1</a>
+      <a href="solution_etape2_installation.html">Solution 2</a>
+      <a href="solution_etape3_architecture.html">Solution 3</a>
+      <a href="solution_etape4_serveur.html">Solution 4</a>
+      <a href="solution_etape5_tests.html">Solution 5</a>
+      <a href="solution_etape6_react_setup.html">Solution 6</a>
+      <a href="solution_etape7_components.html">Solution 7</a>
+      <a href="solution_etape8_fetch_api.html">Solution 8</a>
+      <a href="solution_etape9_grid_pagination.html">Solution 9</a>
+      <a href="solution_etape10_finalisation.html">Solution 10</a>
+    </nav>
+  </div>
+</header>
+<button class="btn"><a href="index.html">Retour à l'index</a></button>
+
+<main>
+<div class="card">
+<h2>1️ Objectif</h2>
+<p>Lancer le serveur Express avec sécurisation et middleware :</p>
+<ul>
+<li>Helmet pour sécuriser les headers</li>
+<li>CORS pour gérer les requêtes cross-origin</li>
+<li>express-rate-limit pour limiter les requêtes</li>
+<li>dotenv pour la configuration</li>
+</ul>
+<p><strong>Action :</strong> Créez le fichier <code>server.js</code> ou <code>app.js</code></p>
+<p><em>Métaphore :</em> Helmet = casque de sécurité, Rate limit = vigile, CORS = panneau d’autorisation.</p>
+</div>
+
+<div class="card">
+<h2>2️ Explications détaillées</h2>
+<p>Chaque middleware protège ou configure le serveur :</p>
+<ul>
+<li><strong>Helmet</strong> : ajoute des headers sécurisés</li>
+<li><strong>CORS</strong> : définit qui peut accéder à l’API</li>
+<li><strong>express-rate-limit</strong> : limite le nombre de requêtes pour éviter les abus</li>
+<li><strong>dotenv</strong> : charge les variables d’environnement (port, clé API)</li>
+</ul>
+<p><strong>Action :</strong> Installer et configurer chaque middleware avant de démarrer le serveur.</p>
+</div>
+
+<div class="card">
+<h2>3️ Exemple concret</h2>
+<pre class="example"><code>
+import express from 'express';
+import helmet from 'helmet';
+import cors from 'cors';
+import rateLimit from 'express-rate-limit';
+import dotenv from 'dotenv';
+
+dotenv.config();
+const app = express();
+
+// Middleware
+app.use(helmet());
+app.use(cors());
+app.use(express.json());
+app.use(rateLimit({ windowMs: 15*60*1000, max: 100 }));
+
+// Route test
+app.get('/', (req, res) => res.send('Serveur OK'));
+
+// Lancer serveur
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Serveur démarré sur ${PORT}`));
+</code></pre>
+<p><strong>Action :</strong> Démarrez le serveur et testez <code>http://localhost:3000</code></p>
+</div>
+
+<div class="card">
+<h2>4️ Cas concrets / erreurs fréquentes</h2>
+<pre class="note"><code>
+// Port déjà utilisé
+Error: listen EADDRINUSE: address already in use
+</code></pre>
+<p>Solution : changer le port dans .env ou arrêter le processus existant.</p>
+
+<pre class="note"><code>
+// Middleware mal importé
+import helmet from 'helmet';
+TypeError: helmet is not a function
+</code></pre>
+<p>Solution : vérifier que helmet est installé et correctement importé.</p>
+</div>
+
+<div class="card">
+<h2>5️ Bonnes pratiques</h2>
+<ul>
+<li>Middleware global en haut avant les routes</li>
+<li>Limiter le nombre de requêtes pour chaque route critique</li>
+<li>Ne jamais exposer directement vos clés dans le code</li>
+</ul>
+<p><em>Métaphore :</em> Chaque middleware est comme un agent de sécurité : placer au bon endroit est crucial.</p>
+</div>
+
+<div class="card">
+<h2>6️ Résumé et prochaine action</h2>
+<p>Vous avez :</p>
+<ul>
+<li>Démarré un serveur Express sécurisé</li>
+<li>Testé la route de base</li>
+<li>Préparé les routes pour connecter vos controllers</li>
+</ul>
+<p><strong>Action :</strong> Passez à l’étape suivante : tests et vérification des routes et services.</p>
+</div>
+
+        <button class="btn"><a href="index.html">Retour à l'index</a></button>
+</main>
+<footer>&copy; 2025 Projet API TMDB & React</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

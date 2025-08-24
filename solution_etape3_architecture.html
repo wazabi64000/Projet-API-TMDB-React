@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solution : Étape 3 - Architecture MVC</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+body { background: #f0f4f8; }
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.8rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.12);}
+h2 { color: #4f46e5; margin-bottom: 1rem;}
+.example { background: #f3f4f6; border-left: 5px solid #6366f1; padding: 1rem; margin: 1rem 0; font-family: monospace; border-radius: 6px; overflow-x: auto;}
+.note { background: #ffeeba; border-left: 5px solid #ff9800; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 6px; font-style: italic;}
+button { background: #4f46e5; color: white; border: none; padding: 0.8rem 1.6rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;}
+button:hover { background: #3730a3; transform: translateY(-2px);}
+</style>
+</head>
+<body>
+<header>
+    <h1>Solution : Étape 3</h1>
+<div class="nav-container">
+    <!-- Étapes côté gauche -->
+ 
+    <!-- Solutions côté droit -->
+    <nav class="nav-column">
+      <h3>Solutions</h3>
+      <a href="solution_etape1_environnement.html">Solution 1</a>
+      <a href="solution_etape2_installation.html">Solution 2</a>
+      <a href="solution_etape3_architecture.html">Solution 3</a>
+      <a href="solution_etape4_serveur.html">Solution 4</a>
+      <a href="solution_etape5_tests.html">Solution 5</a>
+      <a href="solution_etape6_react_setup.html">Solution 6</a>
+      <a href="solution_etape7_components.html">Solution 7</a>
+      <a href="solution_etape8_fetch_api.html">Solution 8</a>
+      <a href="solution_etape9_grid_pagination.html">Solution 9</a>
+      <a href="solution_etape10_finalisation.html">Solution 10</a>
+    </nav>
+  </div>
+  <button class="btn"><a href="index.html">Retour à l'index</a></button>
+</header>
+
+<main>
+
+<div class="card">
+<h2>1️ Objectif</h2>
+<p>Mettre en place une architecture MVC (Model-View-Controller) moderne pour notre API Node.js :</p>
+<ul>
+<li>Controllers : gérer la logique métier et les réponses HTTP</li>
+<li>Services : interactions avec TMDB et traitement des données</li>
+<li>Routes : définir les endpoints et connecter controllers</li>
+<li>Fichier .env pour les clés secrètes</li>
+</ul>
+<p><strong>Action :</strong> Créez les dossiers suivants dans votre projet : <code>controllers/</code>, <code>services/</code>, <code>routes/</code>.</p>
+<p><em>Métaphore :</em> Imaginez le MVC comme un restaurant : Routes = serveur qui prend la commande, Controllers = chef qui prépare le plat, Services = fournisseurs et ingrédients.</p>
+</div>
+
+<div class="card">
+<h2>2️ Explications détaillées</h2>
+<p>Le pattern MVC sépare clairement les responsabilités :</p>
+<ul>
+<li>Routes = point d’entrée de l’application. Ex: GET /movies</li>
+<li>Controllers = logiques métiers et décisions. Ex: filtrer ou transformer les données de TMDB</li>
+<li>Services = appels API externes et traitements spécifiques</li>
+<li>Env = stocke les clés API de manière sécurisée</li>
+</ul>
+<p><strong>Action :</strong> Créez un fichier <code>tmdbService.js</code> dans services et un fichier <code>movieController.js</code> dans controllers.</p>
+</div>
+
+<div class="card">
+<h2>3️ Exemple concret</h2>
+<pre class="example"><code>
+// services/tmdbService.js
+import axios from 'axios';
+import dotenv from 'dotenv';
+dotenv.config();
+
+export const fetchMovies = async (query) => {
+  const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.TMDB_KEY}&query=${query}`;
+  const response = await axios.get(url);
+  return response.data.results;
+};
+</code></pre>
+<p><strong>Action :</strong> Testez ce service avec Node REPL ou un petit script pour vérifier la récupération des films.</p>
+</div>
+
+<div class="card">
+<h2>4️ Cas concrets / erreurs fréquentes</h2>
+<pre class="note"><code>
+// Oublier dotenv
+const url = `https://api.themoviedb.org/3/...&api_key=${process.env.TMDB_KEY}`;
+npm ERR! process.env.TMDB_KEY is undefined
+</code></pre>
+<p>Solution : créer un fichier <code>.env</code> à la racine et ajouter <code>TMDB_KEY=VOTRE_CLE</code></p>
+
+<pre class="note"><code>
+// Mauvaise structure
+routes.get('/movies', controllerFunction)
+Error: controllerFunction is not defined
+</code></pre>
+<p>Solution : importer correctement le controller depuis <code>controllers/movieController.js</code></p>
+</div>
+
+<div class="card">
+<h2>5️ Bonnes pratiques</h2>
+<ul>
+<li>Séparer clairement services et controllers</li>
+<li>Ne jamais mettre la clé TMDB dans le code source</li>
+<li>Structurer les routes par domaine (movies, users…)</li>
+<li>Documenter chaque fonction avec JSDoc ou commentaires</li>
+</ul>
+<p><em>Métaphore :</em> Comme dans un restaurant, chaque poste a son rôle, sinon le plat est raté.</p>
+</div>
+
+<div class="card">
+<h2>6️ Résumé et prochaines actions</h2>
+<p>Vous avez :</p>
+<ul>
+<li>Créé les dossiers MVC</li>
+<li>Compris le rôle de chaque composant</li>
+<li>Mise en place un service TMDB fonctionnel</li>
+</ul>
+<p><strong>Action :</strong> Passez à l’étape suivante : configurer le serveur Express et middleware (Helmet, CORS, rate limit).</p>
+</div>
+
+        <button class="btn"><a href="index.html">Retour à l'index</a></button>
+</main>
+
+<footer>&copy; 2025 Projet API TMDB & React</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

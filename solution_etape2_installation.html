@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solution : Étape 2 - Installation des modules</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+/* Styles améliorés pour les solutions (même que étape 1) */
+body { background: #f0f4f8; }
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.8rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.12);}
+h2 { color: #4f46e5; margin-bottom: 1rem;}
+.example {
+  background: #f3f4f6;
+  border-left: 5px solid #6366f1;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-family: monospace;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+.note {
+  background: #ffeeba;
+  border-left: 5px solid #ff9800;
+  padding: 0.8rem 1rem;
+  margin: 1rem 0;
+  border-radius: 6px;
+  font-style: italic;
+}
+button {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:hover { background: #3730a3; transform: translateY(-2px);}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Solution : Étape 2</h1>
+<div class="nav-container">
+    <!-- Étapes côté gauche -->
+ 
+    <!-- Solutions côté droit -->
+    <nav class="nav-column">
+      <h3>Solutions</h3>
+      <a href="solution_etape1_environnement.html">Solution 1</a>
+      <a href="solution_etape2_installation.html">Solution 2</a>
+      <a href="solution_etape3_architecture.html">Solution 3</a>
+      <a href="solution_etape4_serveur.html">Solution 4</a>
+      <a href="solution_etape5_tests.html">Solution 5</a>
+      <a href="solution_etape6_react_setup.html">Solution 6</a>
+      <a href="solution_etape7_components.html">Solution 7</a>
+      <a href="solution_etape8_fetch_api.html">Solution 8</a>
+      <a href="solution_etape9_grid_pagination.html">Solution 9</a>
+      <a href="solution_etape10_finalisation.html">Solution 10</a>
+    </nav>
+  </div>
+  <button class="btn"><a href="index.html">Retour à l'index</a></button>
+</header>
+
+<main>
+
+<div class="card">
+<h2>1️ Objectif</h2>
+<p>Installer toutes les dépendances nécessaires pour construire notre API Express sécurisée et fonctionnelle :</p>
+<ul>
+<li>Express pour le serveur</li>
+<li>Axios pour appeler TMDB</li>
+<li>Helmet pour la sécurité</li>
+<li>CORS pour gérer les requêtes cross-origin</li>
+<li>express-rate-limit pour limiter les requêtes abusives</li>
+<li>dotenv pour gérer les variables sensibles</li>
+</ul>
+<p><strong>Action :</strong> Préparez le terminal, on installe maintenant les modules.</p>
+<p><em>Métaphore :</em> Installer ces modules, c’est comme mettre en place vos outils avant de commencer le chantier : chaque outil a un rôle précis.</p>
+</div>
+
+<div class="card">
+<h2>2️ Explications détaillées</h2>
+<p>Chaque module a son importance :</p>
+<ul>
+<li><strong>Express</strong> : structure le serveur et les routes, c’est la charpente du bâtiment.</li>
+<li><strong>Axios</strong> : permet de récupérer des données depuis TMDB, comme une pompe qui amène l’eau vers votre chantier.</li>
+<li><strong>Helmet</strong> : protège votre serveur des attaques courantes, c’est comme un pare-feu physique sur le chantier.</li>
+<li><strong>CORS</strong> : contrôle qui peut communiquer avec votre serveur.</li>
+<li><strong>express-rate-limit</strong> : empêche les abus, comme un vigile qui régule le nombre de visiteurs.</li>
+<li><strong>dotenv</strong> : stocke vos clés secrètes à l’abri des regards.</li>
+</ul>
+<p><strong>Action :</strong> Comprenez bien le rôle de chaque module avant de l’installer.</p>
+</div>
+
+<div class="card">
+<h2>3️ Exemple concret</h2>
+<pre class="example"><code>
+# Installer les modules
+npm install express axios helmet cors express-rate-limit dotenv
+</code></pre>
+<p><strong>Explication :</strong> Chaque package est téléchargé et enregistré dans package.json. Vérifiez que le dossier node_modules apparaît.</p>
+<p><strong>Action :</strong> Tapez la commande et vérifiez le résultat.</p>
+</div>
+
+<div class="card">
+<h2>4️ Cas concrets / erreurs fréquentes</h2>
+<pre class="note"><code>
+# Node version trop ancienne
+npm install express
+npm ERR! not compatible with your Node.js version
+</code></pre>
+<p>Solution : mettre à jour Node.js ou utiliser nvm pour gérer les versions.</p>
+
+<pre class="note"><code>
+# Problème de réseau
+npm install axios
+npm ERR! network error
+</code></pre>
+<p>Solution : vérifier la connexion Internet ou utiliser un miroir npm.</p>
+</div>
+
+<div class="card">
+<h2>5️ Bonnes pratiques</h2>
+<ul>
+<li>Installer uniquement ce dont vous avez besoin pour l’instant</li>
+<li>Vérifier la version de chaque package et compatibilité</li>
+<li>Ne jamais exposer vos clés TMDB dans le code : utiliser .env</li>
+<li>Documenter chaque installation dans README.md</li>
+</ul>
+<p><em>Métaphore :</em> Installer trop de modules inutiles, c’est comme encombrer un chantier de matériaux superflus : vous risquez de vous perdre.</p>
+</div>
+
+<div class="card">
+<h2>6️ Résumé et prochaine action</h2>
+<p>Vous avez :</p>
+<ul>
+<li>Installé tous les modules nécessaires</li>
+<li>Compris leur rôle et leur importance</li>
+<li>Préparé le terrain pour créer le serveur Express et les routes</li>
+</ul>
+<p><strong>Action :</strong> Passez à l’étape suivante : création de l’architecture MVC et configuration des routes et services.</p>
+</div>
+
+        <button class="btn"><a href="index.html">Retour à l'index</a></button>
+</main>
+
+<footer>
+&copy; 2025 Projet API TMDB & React
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

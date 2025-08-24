@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solution : Étape 5 - Tests</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>/* même style que les cartes précédentes */</style>
+</head>
+<body>
+<header>
+    <h1>Solution : Étape 5  </h1>
+<div class="nav-container">
+    <!-- Étapes côté gauche -->
+ 
+    <!-- Solutions côté droit -->
+    <nav class="nav-column">
+      <h3>Solutions</h3>
+      <a href="solution_etape1_environnement.html">Solution 1</a>
+      <a href="solution_etape2_installation.html">Solution 2</a>
+      <a href="solution_etape3_architecture.html">Solution 3</a>
+      <a href="solution_etape4_serveur.html">Solution 4</a>
+      <a href="solution_etape5_tests.html">Solution 5</a>
+      <a href="solution_etape6_react_setup.html">Solution 6</a>
+      <a href="solution_etape7_components.html">Solution 7</a>
+      <a href="solution_etape8_fetch_api.html">Solution 8</a>
+      <a href="solution_etape9_grid_pagination.html">Solution 9</a>
+      <a href="solution_etape10_finalisation.html">Solution 10</a>
+    </nav>
+  </div>
+  <button class="btn"><a href="index.html">Retour à l'index</a></button>
+</header>
+
+<main>
+<div class="card">
+<h2>1️ Objectif</h2>
+<p>Tester le fonctionnement complet de l’API :</p>
+<ul>
+<li>Tester la récupération des films depuis TMDB</li>
+<li>Tester les routes GET/POST</li>
+<li>Vérifier les protections Helmet, CORS et Rate Limit</li>
+</ul>
+<p><strong>Action :</strong> Préparer Postman ou curl pour tester les routes.</p>
+<p><em>Métaphore :</em> C’est comme inspecter chaque pièce d’une maison avant d’y emménager.</p>
+</div>
+
+<div class="card">
+<h2>2️ Explications détaillées</h2>
+<p>Tester l’API permet de :</p>
+<ul>
+<li>Détecter les erreurs avant que l’utilisateur ne les voie</li>
+<li>Vérifier que les services communiquent bien avec TMDB</li>
+<li>S’assurer que la sécurité fonctionne correctement</li>
+</ul>
+<p><strong>Action :</strong> Créez un script test.js ou utilisez Postman pour envoyer des requêtes GET et POST.</p>
+</div>
+
+<div class="card">
+<h2>3️ Exemple concret</h2>
+<pre class="example"><code>
+// Test simple avec Node.js
+import { fetchMovies } from './services/tmdbService.js';
+
+(async () => {
+  const movies = await fetchMovies('Matrix');
+  console.log(movies);
+})();
+</code></pre>
+<p><strong>Action :</strong> Lancez le script avec <code>node test.js</code> et vérifiez que la liste de films apparaît.</p>
+</div>
+
+<div class="card">
+<h2>4️ Cas concrets / erreurs fréquentes</h2>
+<pre class="note"><code>
+// Clé TMDB incorrecte
+Error: Invalid API key
+</code></pre>
+<p>Solution : vérifier la valeur de TMDB_KEY dans .env</p>
+
+<pre class="note"><code>
+// Problème réseau
+Error: getaddrinfo ENOTFOUND api.themoviedb.org
+</code></pre>
+<p>Solution : vérifier la connexion Internet et réessayer.</p>
+</div>
+
+<div class="card">
+<h2>5️ Bonnes pratiques</h2>
+<ul>
+<li>Tester chaque route indépendamment</li>
+<li>Vérifier la structure de la réponse JSON</li>
+<li>Ne jamais exposer de clés API dans les tests publics</li>
+<li>Documenter les endpoints testés et résultats</li>
+</ul>
+<p><em>Métaphore :</em> Comme un contrôleur qualité : vérifier chaque produit avant de l’envoyer au client.</p>
+</div>
+
+<div class="card">
+<h2>6️ Résumé et prochaines actions</h2>
+<p>Vous avez :</p>
+<ul>
+<li>Vérifié que l’API fonctionne correctement</li>
+<li>Testé les routes et services</li>
+<li>Préparé le backend pour être consommé par le frontend React</li>
+</ul>
+<p><strong>Action :</strong> Passez maintenant au développement du frontend React et à la consommation des données.</p>
+</div>
+
+        <button class="btn"><a href="index.html">Retour à l'index</a></button>
+</main>
+<footer>&copy; 2025 Projet API TMDB & React</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

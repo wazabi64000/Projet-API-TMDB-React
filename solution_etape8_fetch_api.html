@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solution : Étape 8 - Consommation API</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+ 
+.card { background:#fff; border-radius:12px; padding:1.5rem; margin:2rem auto; max-width:900px; box-shadow:0 6px 22px rgba(0,0,0,0.08);}
+.card:hover { transform: translateY(-4px); box-shadow:0 12px 28px rgba(0,0,0,0.12);}
+h2 { color:#4f46e5; margin-bottom:1rem;}
+pre { background:#f3f4f6; border-left:5px solid #6366f1; padding:1rem; border-radius:6px; overflow-x:auto;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Solution : Étape 8 - Consommation API</h1>
+<div class="nav-container">
+    <!-- Étapes côté gauche -->
+ 
+    <!-- Solutions côté droit -->
+    <nav class="nav-column">
+      <h3>Solutions</h3>
+      <a href="solution_etape1_environnement.html">Solution 1</a>
+      <a href="solution_etape2_installation.html">Solution 2</a>
+      <a href="solution_etape3_architecture.html">Solution 3</a>
+      <a href="solution_etape4_serveur.html">Solution 4</a>
+      <a href="solution_etape5_tests.html">Solution 5</a>
+      <a href="solution_etape6_react_setup.html">Solution 6</a>
+      <a href="solution_etape7_components.html">Solution 7</a>
+      <a href="solution_etape8_fetch_api.html">Solution 8</a>
+      <a href="solution_etape9_grid_pagination.html">Solution 9</a>
+      <a href="solution_etape10_finalisation.html">Solution 10</a>
+    </nav>
+  </div>
+  <button class="btn"><a href="index.html">Retour à l'index</a></button>
+</header>
+
+<main>
+<div class="card">
+<h2>1️⃣ Service API</h2>
+<pre>
+import axios from 'axios';
+
+export const fetchMovies = async () =&gt; {
+  try {
+    const res = await axios.get('http://localhost:3000/movies');
+    return res.data;
+  } catch (err) {
+    console.error('Erreur API:', err);
+    return [];
+  }
+};
+</pre>
+<p>Centraliser vos appels API permet de maintenir le code propre et réutilisable.</p>
+</div>
+
+<div class="card">
+<h2>2️⃣ Utilisation dans App.jsx</h2>
+<pre>
+import { useState, useEffect } from 'react';
+import { fetchMovies } from './services/api';
+import MovieGrid from './components/MovieGrid';
+
+function App() {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() =&gt; {
+    fetchMovies().then(data =&gt; setMovies(data));
+  }, []);
+<ul class="nav-links">
+  <li><a href="index.html">Accueil</a></li>
+  <li><a href="etape7_components.html">Étape 7</a></li>
+  <li><a href="solution_etape7_components.html">Solution Étape 7</a></li>
+</ul>
+  return &lt;MovieGrid movies={movies} /&gt;;
+}
+
+export default App;
+</pre>
+<p>Le composant se met à jour automatiquement lorsque les données sont récupérées.</p>
+</div>
+
+<div class="card">
+<h2>3️⃣ Explications pédagogiques</h2>
+<p>La méthode <code>useEffect</code> est exécutée après le rendu initial, ce qui est idéal pour récupérer les données. Axios gère les promesses et les erreurs de façon simple.</p>
+<p>Métaphore : le composant App.jsx = magasinier, useEffect = le moment où il va chercher les produits dans l’entrepôt, MovieGrid = rayon du magasin.</p>
+</div>
+
+<div class="card">
+<h2>4️⃣ Vérification</h2>
+<p>Ouvrez votre navigateur et vérifiez que la grille affiche tous les films récupérés depuis votre API Node.js.</p>
+</div>
+
+<div class="card">
+<h2>5️⃣ Prochaines étapes</h2>
+<p>Une fois que les films s’affichent, passez à l’étape 9 pour créer la grille responsive avec pagination.</p>
+        <button class="btn"><a href="index.html">Retour à l'index</a></button>
+</div>
+
+</main>
+</body>
+</html>

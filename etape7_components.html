@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Étape 7 : Composants React</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.card {
+  background:#fff;
+  border-radius:12px;
+  padding:1.5rem;
+  margin:2rem auto;
+  max-width:800px;
+  box-shadow:0 6px 22px rgba(0,0,0,0.08);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow:0 12px 28px rgba(0,0,0,0.12);
+}
+h2 { color:#4f46e5; margin-bottom:1rem; }
+pre {
+  background:#f3f4f6;
+  border-left:5px solid #6366f1;
+  padding:1rem;
+  border-radius:6px;
+  overflow-x:auto;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Étape 7 : Composants React</h1>
+</header>
+
+<div class="page-layout">
+
+  <!-- Sidebar gauche : étapes -->
+  <aside class="sidebar left">
+    <h3>Étapes</h3>
+    <nav>
+      <a href="etape1_environnement.html">Étape 1 : Environnement</a>
+      <a href="etape2_installation.html">Étape 2 : Modules</a>
+      <a href="etape3_architecture.html">Étape 3 : Architecture</a>
+      <a href="etape4_serveur.html">Étape 4 : Serveur</a>
+      <a href="etape5_tests.html">Étape 5 : Tests</a>
+      <a href="etape6_react_setup.html">Étape 6 : React Setup</a>
+      <a href="etape7_components.html">Étape 7 : Composants React</a>
+      <a href="etape8_fetch_api.html">Étape 8 : Consommation API</a>
+      <a href="etape9_grid_pagination.html">Étape 9 : Grid & Pagination</a>
+      <a href="etape10_finalisation.html">Étape 10 : Finalisation</a>
+    </nav>
+  </aside>
+
+  <!-- Contenu central -->
+  <main class="content">
+    <div class="card">
+      <h2>Objectif</h2>
+      <p>Créer des composants React réutilisables pour afficher les films.</p>
+    </div>
+
+    <div class="card">
+      <h2>Instructions</h2>
+      <ol>
+        <li>Créer un dossier <code>components/</code> dans <code>src/</code>.</li>
+        <li>Créer le composant <code>MovieCard.jsx</code> pour afficher titre, image et date d’un film.</li>
+        <li>Créer le composant <code>MovieGrid.jsx</code> pour organiser les films en grille.</li>
+        <li>Créer un composant <code>Pagination.jsx</code> pour naviguer entre les pages.</li>
+        <li>Importer ces composants dans <code>App.jsx</code> et tester leur rendu.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Explications pédagogiques</h2>
+      <p>Chaque composant doit être simple et réutilisable. Métaphore : chaque carte = fiche produit, la grille = rayon du magasin, la pagination = ascenseur pour passer aux autres rayons.</p>
+    </div>
+
+    <div class="card">
+      <h2>Action concrète</h2>
+      <pre>
+src/components/MovieCard.jsx
+export default function MovieCard({ movie }) {
+  return (
+    &lt;div className="card"&gt;
+      &lt;img src={movie.poster} alt={movie.title} /&gt;
+      &lt;h3&gt;{movie.title}&lt;/h3&gt;
+      &lt;p&gt;Sortie: {movie.release_date}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+      </pre>
+    </div>
+
+    <div class="card">
+      <h2>Prochaines étapes</h2>
+      <p>Après avoir créé les composants, vous pourrez passer à l’étape suivante pour consommer l’API et afficher les films dynamiquement.</p>
+      <p><a href="index.html">Retour à l'index</a></p>
+    </div>
+  </main>
+
+  <!-- Sidebar droite : solutions -->
+  <aside class="sidebar right">
+    <h3>Solutions</h3>
+    <nav>
+      <a href="solution_etape1_environnement.html">Solution 1</a>
+      <a href="solution_etape2_installation.html">Solution 2</a>
+      <a href="solution_etape3_architecture.html">Solution 3</a>
+      <a href="solution_etape4_serveur.html">Solution 4</a>
+      <a href="solution_etape5_tests.html">Solution 5</a>
+      <a href="solution_etape6_react_setup.html">Solution 6</a>
+      <a href="solution_etape7_components.html">Solution 7</a>
+      <a href="solution_etape8_fetch_api.html">Solution 8</a>
+      <a href="solution_etape9_grid_pagination.html">Solution 9</a>
+      <a href="solution_etape10_finalisation.html">Solution 10</a>
+    </nav>
+  </aside>
+
+</div>
+
+<footer>
+&copy; 2025 Projet API TMDB & React
+</footer>
+
+</body>
+</html>

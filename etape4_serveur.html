@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Étape 4 : Démarrage du serveur</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Étape 4 : Démarrage du serveur</h1>
+</header>
+
+<div class="page-layout">
+
+  <!-- Sidebar gauche : étapes -->
+  <aside class="sidebar left">
+    <h3>Étapes</h3>
+    <nav>
+      <a href="etape1_environnement.html">Étape 1 : Environnement</a>
+      <a href="etape2_installation.html">Étape 2 : Modules</a>
+      <a href="etape3_architecture.html">Étape 3 : Architecture</a>
+      <a href="etape4_serveur.html">Étape 4 : Serveur</a>
+      <a href="etape5_tests.html">Étape 5 : Tests</a>
+      <a href="etape6_react_setup.html">Étape 6 : React Setup</a>
+      <a href="etape7_components.html">Étape 7 : Composants React</a>
+      <a href="etape8_fetch_api.html">Étape 8 : Consommation API</a>
+      <a href="etape9_grid_pagination.html">Étape 9 : Grid & Pagination</a>
+      <a href="etape10_finalisation.html">Étape 10 : Finalisation</a>
+    </nav>
+  </aside>
+
+  <!-- Contenu central -->
+  <main class="content">
+    <section>
+      <h2>Objectif</h2>
+      <p>Configurer et lancer le serveur Express, avec sécurité et écoute sur un port défini.</p>
+    </section>
+
+    <section>
+      <h2>Explications</h2>
+      <p>Le serveur est le cœur du backend. Il gère les routes et la sécurité :</p>
+      <ul>
+        <li>Express pour gérer les requêtes HTTP</li>
+        <li>Helmet pour sécuriser les headers</li>
+        <li>CORS pour autoriser les requêtes depuis le frontend</li>
+        <li>Rate limiter pour limiter les requêtes abusives</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Exemple de code</h2>
+      <pre><code>
+import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
+import dotenv from 'dotenv';
+
+dotenv.config();
+const app = express();
+
+app.use(helmet());
+app.use(cors());
+app.use(express.json());
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100
+});
+app.use(limiter);
+
+app.get('/', (req, res) => {
+  res.send('Serveur en fonctionnement !');
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Serveur démarré sur le port ${PORT}`));
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Bonnes pratiques</h2>
+      <ul>
+        <li>Tester le serveur avec Postman ou navigateur</li>
+        <li>Vérifier les erreurs dans la console</li>
+        <li>Ne pas exposer de données sensibles</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Notes et conseils</h2>
+      <p>Assurez-vous que le fichier <code>.env</code> contient <code>PORT</code> et clé API TMDB si nécessaire.</p>
+    </section>
+
+    <section>
+      <h2>Résumé</h2>
+      <p>Le serveur Express est configuré et prêt à recevoir des requêtes. Le backend est sécurisé et protégé.</p>
+    </section>
+
+    <button onclick="window.location.href='solution_etape4_serveur.html'">Voir la solution</button>
+    <p><a href="index.html">Retour à l'index</a></p>
+  </main>
+
+  <!-- Sidebar droite : solutions -->
+  <aside class="sidebar right">
+    <h3>Solutions</h3>
+    <nav>
+      <a href="solution_etape1_environnement.html">Solution 1</a>
+      <a href="solution_etape2_installation.html">Solution 2</a>
+      <a href="solution_etape3_architecture.html">Solution 3</a>
+      <a href="solution_etape4_serveur.html">Solution 4</a>
+      <a href="solution_etape5_tests.html">Solution 5</a>
+      <a href="solution_etape6_react_setup.html">Solution 6</a>
+      <a href="solution_etape7_components.html">Solution 7</a>
+      <a href="solution_etape8_fetch_api.html">Solution 8</a>
+      <a href="solution_etape9_grid_pagination.html">Solution 9</a>
+      <a href="solution_etape10_finalisation.html">Solution 10</a>
+    </nav>
+  </aside>
+
+</div>
+
+<footer>
+&copy; 2025 Projet API TMDB & React
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
